@@ -50,15 +50,15 @@ func main() {
 		}
 
 		outcome := ""
-		if you == r.Value {
+		if you == r.Value { // Draw
 			score += 3 + you
-		} else if you == r.Prev().Value.(int) {
+		} else if you == r.Prev().Value.(int) { // Lose
 			score += 0 + you
-		} else if you == r.Next().Value.(int) {
+		} else if you == r.Next().Value.(int) { // Win
 			score += 6 + you
 		}
 		fmt.Printf("Opponent: %d, You: %d, Current Ring Value: %d\n --> Outcome: %s, Points total: %d\n", op, you, r.Value, outcome, score)
 	}
 
-	fmt.Println(score)
+	fmt.Println("Final score:", score)
 }

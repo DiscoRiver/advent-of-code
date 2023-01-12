@@ -28,7 +28,7 @@ func main() {
 
 	lines := bytes.Split(input, []byte("\n"))
 
-	// Roshambo has a circle outcome: S -cuts-> P -covers-> R -smashes-> S -cuts-> P ... and so on.
+	// Roshambo has a circular outcome: S -cuts-> P -covers-> R -smashes-> S -cuts-> P ... and so on.
 	r := ring.New(3)
 	for i := 0; i < 3; i++ {
 		r.Value = i + 1
@@ -63,5 +63,5 @@ func main() {
 		fmt.Printf("Opponent: %d, You: %d, Outcome Needed: %s, Points total: %d\n", op, you, outcomeNeeded, score)
 	}
 
-	fmt.Println(score)
+	fmt.Println("Final score:", score)
 }
